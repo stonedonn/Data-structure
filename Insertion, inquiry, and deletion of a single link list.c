@@ -8,7 +8,7 @@ typedef struct _node
 {
     int data; //데이터를 담을 공간
     struct _node* next; //연결의 도구
-}Node;
+}Node;  
 int main() {
     Node* head = NULL; //head와 tail은 연결을 추가 및 유지하기 위한것
     Node* tail = NULL;
@@ -36,6 +36,15 @@ int main() {
         tail = newNode;
 
     }
-    
+    if (head == NULL)
+        printf("저장된 자연수가 존재하지 않습니다.\n");
+    else {
+        cur = head;
+        printf("%d", cur->data);
+        while (cur->next != NULL) {
+            cur = cur->next;
+            printf("%d ", cur->data);
+        }
+    }
     return 0;
 }
